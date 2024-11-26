@@ -1,0 +1,34 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+    <button (click)="drawer.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-drawer-container autosize>
+    <mat-drawer #drawer opened="true" mode="side" position="start">
+        <mat-nav-list>
+            <mat-list-item>
+                <button routerLink="dashboard" mat-button><mat-icon>dashboard</mat-icon> Dashboard</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button routerLink="product" mat-button><mat-icon>shopping_cart</mat-icon>Products</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button routerLink="category" mat-button><mat-icon>category</mat-icon>Category</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button routerLink="orders" mat-button><mat-icon>shopping_bag</mat-icon>Orders</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button routerLink="offers" mat-button><mat-icon>local_offer</mat-icon>Offers</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button routerLink="logout" mat-button><mat-icon>logout</mat-icon> Logout</button>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div style="text-align: center;min-height: 600px;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
